@@ -15,6 +15,8 @@ const ListForm = ({ brands, onHandleList }) => {
     e.preventDefault();
     const id = crypto.randomUUID();
 
+    if (!email) return;
+
     const words = email.split("@")[0].split(/[.-_]/);
     const initials = words
       .map((word) => (word ? word.charAt(0).toUpperCase() : ""))
